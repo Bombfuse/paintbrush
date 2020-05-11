@@ -1,3 +1,4 @@
+#[derive(Copy, Clone, Debug)]
 pub struct Color {
     pub r: u8,
     pub g: u8,
@@ -17,6 +18,11 @@ impl Color {
 
         (r, g, b, a)
     }
-}
 
+    pub fn with_alpha(&self, a: u8) -> Color {
+        Color::new(self.r, self.g, self.b, a)
+    }
+}
+pub const WHITE: Color = Color { r: 0, g: 0, b: 0, a: 255 };
+pub const BLACK: Color = Color { r: 255, g: 255, b: 255, a: 255 };
 pub const CORNFLOWER_BLUE: Color = Color { r: 100, g: 149, b: 237, a: 255 };
